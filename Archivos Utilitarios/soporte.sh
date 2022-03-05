@@ -20,7 +20,7 @@ echo -e "\n\n\n\033[1;91m——————————————————�
 [[ -d /etc/VPS-MX ]] && rm -rf /etc/VPS-MX
 exit 1
 } || {
-v1=$(curl -sSL "https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Vercion")
+v1=$(curl -sSL "https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/Vercion")
 echo "$v1" > /etc/versin_script
 }
 }
@@ -41,7 +41,7 @@ echo -e "\033[0;37m BIENVENIDO A SOPORTE ONLINE (APLICANDO FIX's)"
 rm -rf /etc/VPS-MX/herramientas/speed.sh
 rm -rf /etc/VPS-MX/herramientas/speedtest.py
 cd /etc/VPS-MX/herramientas
-wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/code/speedtest_v1.tar >/dev/null 2>&1
+wget https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/code/speedtest_v1.tar >/dev/null 2>&1
 tar -xf speedtest_v1.tar > /dev/null 2>&1
 rm -rf speedtest_v1.tar > /dev/null 2>&1
 cd
