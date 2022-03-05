@@ -1,4 +1,4 @@
 #!/bin/bash
 #Soporte Remoto (SPR)
 echo "" >/dev/null 2>&1
-wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/SOPORTE.sh -O /usr/bin/SOPORTE > /dev/null 2>&1
+wget https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SR/SOPORTE.sh -O /usr/bin/SOPORTE > /dev/null 2>&1
