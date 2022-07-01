@@ -50,10 +50,10 @@ install_paketes() {
   clear && clear
   ### PAQUETES PRINCIPALES
   msg -bar2
-  msg -ama "  [ SCRIPT-FREE  \033[1;97m ❌ MOD By @Near ❌\033[1;33m ]"
+  msg -ama "  [ SCRIPT-FREE  \033[1;97m ❌ MOD BY NEAR ❌\033[1;33m ]"
   msg -bar
   echo -e "\033[97m"
-  echo -e "  \033[41m    -- INSTALACION DE PAQUETES PARA VPS-MX --    \e[49m"
+  echo -e "  \033[41m    -- INSTALACION DE PAQUETES PARA NEAR-Script --    \e[49m"
   echo -e "\033[97m"
   msg -bar
   #grep
