@@ -232,11 +232,12 @@ echo "exit 0" >>/etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >>.bashrc
 echo 'echo ""' >>.bashrc
-echo 'echo -e "\t\033[91m __     ______  ____        __  ____  __ " ' >>.bashrc
-echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___|      |  \/  \ \/ / " ' >>.bashrc
-echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ _____| |\/| |\  /  " ' >>.bashrc
-echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |_____| |  | |/  \  " ' >>.bashrc
-echo 'echo -e "\t\033[91m    \_/  |_|   |____/      |_|  |_/_/\_\ " ' >>.bashrc
+echo 'echo -e "\t\033[91m     _   ___________    ____       _____           _       __ " ' >>.bashrc
+echo 'echo -e "\t\033[91m    / | / / ____/   |  / __ \     / ___/__________(_)___  / /_" ' >>.bashrc
+echo 'echo -e "\t\033[91m   /  |/ / __/ / /| | / /_/ /_____\__ \/ ___/ ___/ / __ \/ __/" ' >>.bashrc
+echo 'echo -e "\t\033[91m  / /|  / /___/ ___ |/ _, _/_____/__/ / /__/ /  / / /_/ / /_  " ' >>.bashrc
+echo 'echo -e "\t\033[91m /_/ |_/_____/_/  |_/_/ |_|     /____/\___/_/  /_/ .___/\__/  " ' >>.bashrc
+echo 'echo -e "\t\033[91m                                                   /_/        " ' >>.bashrc
 echo 'echo "" ' >>.bashrc
 echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
 echo 'echo "" ' >>.bashrc
@@ -246,7 +247,7 @@ echo 'echo "" ' >>.bashrc
 echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
 echo 'echo ""' >>.bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-echo -e "  \033[1;41m               sudo VPSMX o menu             \033[0;37m" && msg -bar2
+echo -e "  \033[1;41m               menu o MENU            \033[0;37m" && msg -bar2
 rm -rf /usr/bin/pytransform &>/dev/null
 rm -rf VPS-MX.sh
 rm -rf lista-arq
