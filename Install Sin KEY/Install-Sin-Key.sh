@@ -53,7 +53,7 @@ install_paketes() {
   msg -ama "  [ SCRIPT-FREE  \033[1;97m ❌ MOD BY NEAR ❌\033[1;33m ]"
   msg -bar
   echo -e "\033[97m"
-  echo -e "  \033[41m    -- INSTALACION DE PAQUETES PARA NEAR-Script --    \e[49m"
+  echo -e "  \033[41m    <=====< INSTALACION DE PAQUETES PARA NEAR-Script >=====>    \e[49m"
   echo -e "\033[97m"
   msg -bar
   #grep
