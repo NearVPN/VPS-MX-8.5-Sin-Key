@@ -237,7 +237,7 @@ echo 'echo -e "\t\033[91m    / | / / ____/   |  / __ \     / ___/__________(_)__
 echo 'echo -e "\t\033[91m   /  |/ / __/ / /| | / /_/ /_____\__ \/ ___/ ___/ / __ \/ __/" ' >>.bashrc
 echo 'echo -e "\t\033[91m  / /|  / /___/ ___ |/ _, _/_____/__/ / /__/ /  / / /_/ / /_  " ' >>.bashrc
 echo 'echo -e "\t\033[91m /_/ |_/_____/_/  |_/_/ |_|     /____/\___/_/  /_/ .___/\__/  " ' >>.bashrc
-echo 'echo -e "\t\033[91m                                                   /_/        " ' >>.bashrc
+echo 'echo -e "\t\033[91m                                                /_/           " ' >>.bashrc
 echo 'echo "" ' >>.bashrc
 echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
 echo 'echo "" ' >>.bashrc
