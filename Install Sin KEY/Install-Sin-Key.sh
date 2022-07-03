@@ -1,4 +1,5 @@
-clear
+#!/bin/bash
+clear && clear
 if [ `whoami` != 'root' ]
 	then 
      echo -e "\e[1;31mPARA PODER USAR EL INSTALADOR ES NECESARIO SER ROOT\nAUN NO SABES COMO INICAR COMO ROOT?\nDIJITA ESTE COMANDO EN TU TERMINAL ( sudo -i )\e[0m" 
@@ -549,7 +550,7 @@ msg -bar2 && msg -verm "  Code Invalido -- #¡Key Invalida#! " && msg -bar2
 rm -rf lista-arq
 exit 1
 }
-while [[ ! $Key ]]; do
+while [[ $Key ]]; do
 msg -bar2 && msg -ne "\033[1;93m          >>> INGRESE SU KEY ABAJO <<<\n   \033[1;37m" && read Key
 tput cuu1 && tput dl1
 done
