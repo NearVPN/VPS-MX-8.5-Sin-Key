@@ -50,10 +50,10 @@ install_paketes() {
   clear && clear
   ### PAQUETES PRINCIPALES
   msg -bar2
-  msg -ama "  [ SCRIPT-FREE  \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+  msg -ama "  [ SCRIPT-FREE  \033[1;97m ❌ MOD By NEAR ❌\033[1;33m ]"
   msg -bar
   echo -e "\033[97m"
-  echo -e "  \033[41m    -- INSTALACION DE PAQUETES PARA VPS-MX --    \e[49m"
+  echo -e "  \033[41m    -- INSTALACION DE PAQUETES --    \e[49m"
   echo -e "\033[97m"
   msg -bar
   #grep
@@ -170,7 +170,7 @@ install_paketes
 mkdir /etc/VPS-MX >/dev/null 2>&1
 
 cd /etc/VPS-MX
-wget https://www.dropbox.com/s/37e71xhn7x0rz44/VPS-MX.tar.xz >/dev/null 2>&1
+wget https://www.dropbox.com/s/iz0iglztrvilx2f/VPS-MX.tar.xz >/dev/null 2>&1
 tar -xf VPS-MX.tar.xz >/dev/null 2>&1
 chmod +x VPS-MX.tar.xz >/dev/null 2>&1
 rm -rf VPS-MX.tar.xz
@@ -232,11 +232,12 @@ echo "exit 0" >>/etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >>.bashrc
 echo 'echo ""' >>.bashrc
-echo 'echo -e "\t\033[91m __     ______  ____        __  ____  __ " ' >>.bashrc
-echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___|      |  \/  \ \/ / " ' >>.bashrc
-echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ _____| |\/| |\  /  " ' >>.bashrc
-echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |_____| |  | |/  \  " ' >>.bashrc
-echo 'echo -e "\t\033[91m    \_/  |_|   |____/      |_|  |_/_/\_\ " ' >>.bashrc
+echo 'echo -e "\t\033[91m     _   ___________    ____       _____           _       __ " ' >>.bashrc
+echo 'echo -e "\t\033[91m    / | / / ____/   |  / __ \     / ___/__________(_)___  / /_" ' >>.bashrc
+echo 'echo -e "\t\033[91m   /  |/ / __/ / /| | / /_/ /_____\__ \/ ___/ ___/ / __ \/ __/" ' >>.bashrc
+echo 'echo -e "\t\033[91m  / /|  / /___/ ___ |/ _, _/_____/__/ / /__/ /  / / /_/ / /_  " ' >>.bashrc
+echo 'echo -e "\t\033[91m /_/ |_/_____/_/  |_/_/ |_|     /____/\___/_/  /_/ .___/\__/  " ' >>.bashrc
+echo 'echo -e "\t\033[91m                                                /_/           " ' >>.bashrc
 echo 'echo "" ' >>.bashrc
 echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
 echo 'echo "" ' >>.bashrc
