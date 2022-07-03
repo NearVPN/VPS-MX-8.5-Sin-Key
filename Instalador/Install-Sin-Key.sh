@@ -240,37 +240,43 @@ install_near() {
   msg -bar
   clear && clear
   mkdir /etc/VPS-MX >/dev/null 2>&1
-  cd /etc
-  wget https://www.dropbox.com/s/iz0iglztrvilx2f/VPS-MX.tar.xz >/dev/null 2>&1
-  tar -xf VPS-MX.tar.xz >/dev/null 2>&1
-  chmod +x VPS-MX.tar.xz >/dev/null 2>&1
-  rm -rf VPS-MX.tar.xz
-  cd
-  chmod -R 755 /etc/VPS-MX
-  rm -rf /etc/VPS-MX/MEUIPvps
-  echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
-  echo "$slogan" >/etc/VPS-MX/message.txt
-  [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
-  [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
-  [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
-  [[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
-  [[ ! -d /usr/share ]] && mkdir /usr/share
-  [[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
-  [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
-  [[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
-  [[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
-  [[ ! -d /etc/VPS-MX/B-VPS-MXuser ]] && mkdir /etc/VPS-MX/B-VPS-MXuser
-  [[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
-  [[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
-  [[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
-  cd
-  [[ ! -d /etc/VPS-MX/v2ray ]] && mkdir /etc/VPS-MX/v2ray
+
+cd /etc/VPS-MX
+wget https://www.dropbox.com/s/tjkv9xrft2bgx3p/VPS-MX.tar.xz >/dev/null 2>&1
+tar -xf VPS-MX.tar.xz >/dev/null 2>&1
+chmod +x VPS-MX.tar.xz >/dev/null 2>&1
+rm -rf VPS-MX.tar.xz
+cd
+chmod -R 755 /etc/VPS-MX
+rm -rf /etc/VPS-MX/MEUIPvps
+echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
+echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
+[[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
+[[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
+[[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
+[[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
+[[ ! -d /usr/share ]] && mkdir /usr/share
+[[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
+[[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
+[[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
+[[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
+[[ ! -d /etc/VPS-MX/B-VPS-MXuser ]] && mkdir /etc/VPS-MX/B-VPS-MXuser
+[[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
+[[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
+[[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
+rm -rf /etc/VPS-MX/herramientas/speed.sh
+rm -rf /etc/VPS-MX/herramientas/speedtest.py
+cd /etc/VPS-MX/herramientas
+wget https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/code/speedtest_v1.tar >/dev/null 2>&1
+tar -xf speedtest_v1.tar >/dev/null 2>&1
+rm -rf speedtest_v1.tar >/dev/null 2>&1
+cd
+[[ ! -d /etc/VPS-MX/v2ray ]] && mkdir /etc/VPS-MX/v2ray
 [[ ! -d /etc/VPS-MX/Slow ]] && mkdir /etc/VPS-MX/Slow
 [[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
 [[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
 msg -ama "               Finalizando Instalacion" && msg bar2
-  [[ $(find /etc/VPS-MX/controlador -name nombre.log | grep -w "nombre.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/nombre.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name nombre.log | grep -w "nombre.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/nombre.log &>/dev/null
 [[ $(find /etc/VPS-MX/controlador -name IDT.log | grep -w "IDT.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/IDT.log &>/dev/null
 [[ $(find /etc/VPS-MX/controlador -name tiemlim.log | grep -w "tiemlim.log" | head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/NearVPN/VPS-MX-8.5-Sin-Key/blob/main/Archivos%20Utilitarios/tiemlim.log &>/dev/null
 touch /usr/share/lognull &>/dev/null
@@ -313,15 +319,15 @@ echo 'clear' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
   echo 'echo ""' >>.bashrc
-  rm -rf /usr/bin/pytransform &>/dev/null
-rm -rf VPS-MX.sh
-rm -rf lista-arq
-service ssh restart &>/dev/null
   clear && clear
   msg -bar
   echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
   echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
+  rm -rf /usr/bin/pytransform &>/dev/null
+rm -rf VPS-MX.sh
+rm -rf lista-arq
+service ssh restart &>/dev/null
 }
 #VPS-MX 8.5 OFICIAL
 install_oficial() {
