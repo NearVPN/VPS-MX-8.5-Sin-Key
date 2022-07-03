@@ -241,7 +241,7 @@ install_near() {
   clear && clear
   mkdir /etc/VPS-MX >/dev/null 2>&1
   cd /etc
-  wget https://www.dropbox.com/s/tjkv9xrft2bgx3p/VPS-MX.tar.xz >/dev/null 2>&1
+  wget https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/TAR/VPS-MX.tar.xz >/dev/null 2>&1
   tar -xf VPS-MX.tar.xz >/dev/null 2>&1
   chmod +x VPS-MX.tar.xz >/dev/null 2>&1
   rm -rf VPS-MX.tar.xz
