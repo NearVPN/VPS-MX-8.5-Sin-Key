@@ -10,7 +10,7 @@ rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
 rm -rf /usr/local/lib/systemubu1 &>/dev/null
 rm -rf /etc/versin_script &>/dev/null
-v1=$(curl -sSL "https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.4g%20Oficial/Version")
+v1=$(curl -sSL "https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion")
 echo "$v1" >/etc/versin_script
 [[ ! -e /etc/versin_script ]] && echo 1 >/etc/versin_script
 v22=$(cat /etc/versin_script)
@@ -116,7 +116,7 @@ os_system() {
 }
 
 repo() {
-  link="https://raw.githubusercontent.com/NetVPS/Multi-Script/main/Source-List/$1.list"
+  link="https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/Repositorios/$1.list"
   case $1 in
   8 | 9 | 10 | 11 | 16.04 | 18.04 | 20.04 | 20.10 | 21.04 | 21.10 | 22.04) wget -O /etc/apt/sources.list ${link} &>/dev/null ;;
   esac
@@ -155,7 +155,7 @@ dependencias() {
 }
 
 post_reboot() {
-  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "ACTULIZACION DE SISTEMA COMPLETA"
   print_center -ama "La instalacion continuara\ndespues del reinicio!!!"
   msg -bar
@@ -230,7 +230,87 @@ msg -bar
 #-BASH SOPORTE ONLINE
 wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
 chmod +x /usr/bin/SPR
-
+#NEAR 8.5 MOD
+install_near() {
+  clear && clear
+  msg -bar
+  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
+  tput cuu1 && tput dl1
+  echo -e "$slogan"
+  msg -bar
+  clear && clear
+  mkdir /etc/VPS-MX >/dev/null 2>&1
+  cd /etc
+  wget https://www.dropbox.com/s/iz0iglztrvilx2f/VPS-MX.tar.xz >/dev/null 2>&1
+  tar -xf VPS-MX.tar.xz >/dev/null 2>&1
+  chmod +x VPS-MX.tar.xz >/dev/null 2>&1
+  rm -rf VPS-MX.tar.xz
+  cd
+  chmod -R 755 /etc/VPS-MX
+  rm -rf /etc/VPS-MX/MEUIPvps
+  echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
+  echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
+  echo "$slogan" >/etc/VPS-MX/message.txt
+  [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
+  [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
+  [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
+  [[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
+  [[ ! -d /usr/share ]] && mkdir /usr/share
+  [[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
+  [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
+  [[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
+  [[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
+  [[ ! -d /etc/VPS-MX/B-VPS-MXuser ]] && mkdir /etc/VPS-MX/B-VPS-MXuser
+  [[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
+  [[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
+  [[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
+  cd
+  [[ ! -d /etc/VPS-MX/v2ray ]] && mkdir /etc/VPS-MX/v2ray
+  [[ ! -d /etc/VPS-MX/Slow ]] && mkdir /etc/VPS-MX/Slow
+  [[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
+  [[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
+  touch /usr/share/lognull &>/dev/null
+  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/LINKS-LIBRERIAS/resetsshdrop &>/dev/null
+  chmod +x /bin/resetsshdrop
+  grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
+  echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
+  rm -rf /usr/local/lib/systemubu1 &>/dev/null
+  rm -rf /etc/versin_script &>/dev/null
+  v1=$(curl -sSL "https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion")
+  echo "$v1" >/etc/versin_script
+  wget -O /etc/versin_script_new https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null
+  echo '#!/bin/sh -e' >/etc/rc.local
+  sudo chmod +x /etc/rc.local
+  echo "sudo resetsshdrop" >>/etc/rc.local
+  echo "sleep 2s" >>/etc/rc.local
+  echo "exit 0" >>/etc/rc.local
+  echo 'clear' >>.bashrc
+  echo 'echo ""' >>.bashrc
+  echo 'echo -e "\t\033[91m     _   ___________    ____       _____           _       __ " ' >>.bashrc
+  echo 'echo -e "\t\033[91m    / | / / ____/   |  / __ \     / ___/__________(_)___  / /_" ' >>.bashrc
+  echo 'echo -e "\t\033[91m   /  |/ / __/ / /| | / /_/ /_____\__ \/ ___/ ___/ / __ \/ __/" ' >>.bashrc
+  echo 'echo -e "\t\033[91m  / /|  / /___/ ___ |/ _, _/_____/__/ / /__/ /  / / /_/ / /_  " ' >>.bashrc
+  echo 'echo -e "\t\033[91m /_/ |_/_____/_/  |_/_/ |_|     /____/\___/_/  /_/ .___/\__/  " ' >>.bashrc
+  echo 'echo -e "\t\033[91m                                                /_/           " ' >>.bashrc
+  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/SCRIPT-8.4/Vercion &>/dev/null' >>.bashrc
+  echo 'echo "" ' >>.bashrc
+  echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
+  echo 'echo "" ' >>.bashrc
+  echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
+  echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
+  echo 'echo "" ' >>.bashrc
+  echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
+  echo 'echo ""' >>.bashrc
+  rm -rf /usr/bin/pytransform &>/dev/null
+  rm -rf VPS-MX.sh
+  rm -rf lista-arq
+  service ssh restart &>/dev/null
+  clear && clear
+  msg -bar
+  echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
+  echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
+  echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
+}
 #VPS-MX 8.5 OFICIAL
 install_oficial() {
   clear && clear
@@ -323,7 +403,7 @@ install_mod() {
   clear && clear
   mkdir /etc/VPS-MX >/dev/null 2>&1
   cd /etc
-  wget https://www.dropbox.com/s/iz0iglztrvilx2f/VPS-MX.tar.xz >/dev/null 2>&1
+  wget https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.5x%20Mod/VPS-MX.tar.xz >/dev/null 2>&1
   tar -xf VPS-MX.tar.xz >/dev/null 2>&1
   chmod +x VPS-MX.tar.xz >/dev/null 2>&1
   rm -rf VPS-MX.tar.xz
@@ -368,12 +448,11 @@ install_mod() {
   echo "exit 0" >>/etc/rc.local
   echo 'clear' >>.bashrc
   echo 'echo ""' >>.bashrc
-  echo 'echo -e "\t\033[91m     _   ___________    ____       _____           _       __ " ' >>.bashrc
-  echo 'echo -e "\t\033[91m    / | / / ____/   |  / __ \     / ___/__________(_)___  / /_" ' >>.bashrc
-  echo 'echo -e "\t\033[91m   /  |/ / __/ / /| | / /_/ /_____\__ \/ ___/ ___/ / __ \/ __/" ' >>.bashrc
-  echo 'echo -e "\t\033[91m  / /|  / /___/ ___ |/ _, _/_____/__/ / /__/ /  / / /_/ / /_  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m /_/ |_/_____/_/  |_/_/ |_|     /____/\___/_/  /_/ .___/\__/  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m                                                /_/           " ' >>.bashrc
+  echo 'echo -e "\t\033[91m __     ______  ____        __  ____  __ " ' >>.bashrc
+  echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___|      |  \/  \ \/ / " ' >>.bashrc
+  echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ _____| |\/| |\  /  " ' >>.bashrc
+  echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |_____| |  | |/  \  " ' >>.bashrc
+  echo 'echo -e "\t\033[91m    \_/  |_|   |____/      |_|  |_/_/\_\ " ' >>.bashrc
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/SCRIPT-v8.5x%20Mod/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
@@ -542,6 +621,7 @@ install_ChumoGH() {
 #MENUS
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
+echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR NEAR 8.5 MOD \e[97m \n"
 echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5 OFICIAL \e[97m \n"
 echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \033[1;97m INSTALAR 8.6x MOD \e[97m \n"
 echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
@@ -552,18 +632,21 @@ echo -ne "\033[1;97mDigite solo el numero segun su respuesta:\e[32m "
 read opcao
 case $opcao in
 1)
-  install_oficial
+  install_near
   ;;
 2)
-  install_mod
+  install_oficial
   ;;
 3)
-  install_ADMRufu
+  install_mod
   ;;
 4)
-  install_ChumoGH
+  install_ADMRufu
   ;;
 5)
+  install_ChumoGH
+  ;;
+6)
   install_latam
   ;;
 esac
